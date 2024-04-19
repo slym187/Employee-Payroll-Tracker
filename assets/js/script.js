@@ -44,7 +44,7 @@ const displayAverageSalary = function(employeesArray) {
     return;
   }
 
-  const totalSalary = employeesArray.reduce((acc, curr) => acc + curr, 0);
+  const totalSalary = employeesArray.reduce((acc, curr) => acc + curr.salary, 0);
   const averageSalary = totalSalary / employeesArray.length;
 
   console.log(`The average salary is: ${averageSalary.toLocaleString("en-US",{
@@ -62,6 +62,7 @@ const getRandomEmployee = function(employeesArray) {
     console.log("No employees available");
     return null;
   }
+      
     const randomIndex = Math.floor(Math.random() * employeesArray.length);
     const randomEmployee = employeesArray[randomIndex];
     console.log(`Payroll Audit: ${randomEmployee.firstName} ${randomEmployee.lastName}-Salary:
