@@ -26,7 +26,7 @@ const collectEmployees = function() {
       lastName: lastName,
       salary: parseFloat(salary)
     };
-    employeesArray.push({firstName, lastName, salary});
+    employeesArray.push(employee);
     const addMore = prompt("Do you want to add another employee? (yes/no)").toLowerCase();
     addMoreEmployees = addMore === "yes";
    
