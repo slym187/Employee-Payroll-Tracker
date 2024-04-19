@@ -1,10 +1,10 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
-let employeesArray = []
+let employeesArray = [];
 // Collect employee data
 const collectEmployees = function() {
-  
+  employeesArray = [];
   // TODO: Get user input to create and return an array of employee objects
 
   let addMoreEmployees = true;
@@ -37,17 +37,20 @@ const collectEmployees = function() {
 
 
 // Display the average salary
-const displayAverageSalary = function(salaries) {
+const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
-  if (!Array.isArray(salaries) || salaries.length === 0) {
+  if (!Array.isArray(employeesArray) || employeesArray.length === 0) {
     console.log("No valid salaries provided.");
     return;
   }
 
-  const totalSalary = salaries.reduce((acc, curr) => acc + curr, 0);
-  const averageSalary = totalSalary / salaries.length;
+  const totalSalary = employeesArray.reduce((acc, curr) => acc + curr, 0);
+  const averageSalary = totalSalary / employeesArray.length;
 
-  console.log(`The average salary is: ${averageSalary.toFixed(2)}`);
+  console.log(`The average salary is: ${averageSalary.toLocaleString("en-US",{
+    style: "currency",
+    currency: "USD"
+  })}`);
 
 };
 
@@ -61,7 +64,11 @@ const getRandomEmployee = function(employeesArray) {
   }
     const randomIndex = Math.floor(Math.random() * employeesArray.length);
     const randomEmployee = employeesArray[randomIndex];
-    console.log(`Payroll Audit: ${randomEmployee.firstName} ${randomEmployee.lastName}`);
+    console.log(`Payroll Audit: ${randomEmployee.firstName} ${randomEmployee.lastName}-Salary:
+    ${randomEmployee.salary.toLocaleString("en-US",{
+      style:"currency",
+      currency: "USD"
+    })}`);
     return randomEmployee;
 };
 
