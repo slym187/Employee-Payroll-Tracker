@@ -11,6 +11,7 @@ This project is a Payroll Tracker, it will put the employees names in alphabetic
 - Omar
 - Masi
 # Link To Deployed Page
+https://slym187.github.io/Employee-Payroll-Tracker/
 
 # License
 Please refer to the LICENSE in the repo.
