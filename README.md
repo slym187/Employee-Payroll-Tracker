@@ -9,7 +9,7 @@ This project is a Payroll Tracker, it will put the employees names in alphabetic
 # Credits
 - chatgpt
 - Omar
-- 
+- Masi
 # Link To Deployed Page
 
 # License
